@@ -8,7 +8,7 @@ import {observer} from "mobx-react";
 
 const App = observer(props => (
     <div>
-        <div className="row mt-5 text-center">
+        <div className="row mt-5 text-center header-row">
             <div className="margin-auto">
                 <div className="d-inline-block">
                     <img src={logo} className="App-logo" alt="logo"/>
