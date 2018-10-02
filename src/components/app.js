@@ -1,6 +1,6 @@
 import React from 'react';
-import List from "./List";
-import Form from "./Form";
+import List from "./list";
+import Form from "./form";
 import {observer} from "mobx-react";
 
 const App = observer(props => (
