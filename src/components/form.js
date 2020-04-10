@@ -17,8 +17,7 @@ class ConnectedForm extends React.Component {
     }
 
     addArticle = () => {
-        const {articleManager} = this.props;
-        articleManager.addArticle(this.state.newTitle);
+        this.props.addArticle(this.state.newTitle);
     }
 
     render() {

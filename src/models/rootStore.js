@@ -1,7 +1,7 @@
 import {types} from "mobx-state-tree";
 import Article from "./article";
 
-const ArticleManager = types.model({
+const RootStore = types.model({
     articles: types.optional(types.array(Article), []),
 }).actions(self => {
     function addArticle(newTitle) {
@@ -11,8 +11,8 @@ const ArticleManager = types.model({
     return {addArticle}
 });
 
-const articleManager = ArticleManager.create({
+const rootStore = RootStore.create({
     articles: []
 });
 
-export default articleManager;
+export default rootStore;

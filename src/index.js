@@ -3,11 +3,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
 import registerServiceWorker from './registerServiceWorker';
-import articleManager from './models/articleManager';
+import rootStore from './models/rootStore';
 import {Provider} from 'mobx-react';
 
 ReactDOM.render(
-    <Provider articleManager={articleManager}>
+    <Provider store={rootStore}>
         <App />
     </Provider>,
     document.getElementById('root')

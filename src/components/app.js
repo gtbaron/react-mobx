@@ -6,7 +6,7 @@ import Form from "./form";
 
 import {observer, inject} from "mobx-react";
 
-const App = observer(({articleManager}) => {
+const App = observer(({store}) => {
     return (
         <div>
             <div className="row mt-5 text-center header-row">
@@ -24,15 +24,15 @@ const App = observer(({articleManager}) => {
             <div className="row mt-5">
                 <div className="col-md-4 offset-md-1">
                     <h2>Articles</h2>
-                    <List articles={articleManager.articles}/>
+                    <List articles={store.articles}/>
                 </div>
                 <div className="col-md-4 offset-md-1">
                     <h2>Add a new article</h2>
-                    <Form articleManager={articleManager}/>
+                    <Form addArticle={store.addArticle}/>
                 </div>
             </div>
         </div>
     );
 });
 
-export default inject('articleManager')(observer(App));
+export default inject('store')(observer(App));
