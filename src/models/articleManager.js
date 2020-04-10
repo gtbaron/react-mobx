@@ -3,22 +3,16 @@ import Article from "./article";
 
 const ArticleManager = types.model({
     articles: types.optional(types.array(Article), []),
-    newTitle: types.optional(types.string, "")
 }).actions(self => {
-    function addArticle() {
-        self.articles.push(Article.create({title: self.newTitle}))
+    function addArticle(newTitle) {
+        self.articles.push(Article.create({title: newTitle}))
     }
 
-    function setTitle(title) {
-        self.newTitle = title
-    }
-
-    return {addArticle, setTitle}
+    return {addArticle}
 });
 
 const articleManager = ArticleManager.create({
-    articles: [],
-    newTitle: ""
+    articles: []
 });
 
 export default articleManager;
