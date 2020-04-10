@@ -2,8 +2,7 @@ import React from "react";
 import {observer} from "mobx-react";
 
 
-const ConnectedForm = observer(props => {
-    const {articleManager} = props;
+const ConnectedForm = observer(({articleManager}) => {
     return (
         <div>
             <div className="form-group">
@@ -18,7 +17,7 @@ const ConnectedForm = observer(props => {
             </div>
             <button className="btn btn-success btn-lg" onClick={articleManager.addArticle} >Save</button>
         </div>
-    )
+    );
 });
 
 const Form = ConnectedForm;

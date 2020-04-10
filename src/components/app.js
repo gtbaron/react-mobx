@@ -6,8 +6,7 @@ import Form from "./form";
 
 import {observer, inject} from "mobx-react";
 
-const App = observer(props => {
-    const {articleManager} = props;
+const App = observer(({articleManager}) => {
     return (
         <div>
             <div className="row mt-5 text-center header-row">
@@ -33,7 +32,7 @@ const App = observer(props => {
                 </div>
             </div>
         </div>
-    )
+    );
 });
 
 export default inject('articleManager')(observer(App));

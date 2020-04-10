@@ -1,8 +1,7 @@
 import React from "react";
 import {observer} from "mobx-react";
 
-const ConnectedList = observer(props => {
-    const {articles} = props;
+const ConnectedList = observer(({articles}) => {
     return (
         <ul className="list-group list-group-flush">
             { articles.map((el, index) => (
@@ -11,7 +10,7 @@ const ConnectedList = observer(props => {
                 </li>
             ))}
         </ul>
-    )
+    );
 });
 
 const List = ConnectedList;
