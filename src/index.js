@@ -3,8 +3,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
 import registerServiceWorker from './registerServiceWorker';
-import store from "./models/root-store";
+import articleManager from './models/articleManager';
+import {Provider} from 'mobx-react';
 
+ReactDOM.render(
+    <Provider articleManager={articleManager}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+);
 
-ReactDOM.render(<App store={store} />, document.getElementById('root'));
 registerServiceWorker();
